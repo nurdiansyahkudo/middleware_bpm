@@ -1,7 +1,7 @@
 from werkzeug.exceptions import RequestEntityTooLarge
 from odoo import http
 
-class LimitedFileSizeMiddleware(http.Root):
+class LimitedFileSizeMiddleware(http.WebRequest):
     def __call__(self, environ, start_response):
         content_length = environ.get("CONTENT_LENGTH")
         max_size = 2147483648  # 2GB
