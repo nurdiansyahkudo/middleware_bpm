@@ -1,5 +1,5 @@
-from .middleware.file_size_middleware import LimitedFileSizeMiddleware
-from odoo.service.wsgi_server import application
+from . import models
+from odoo.service import server
 
-# Tambahkan middleware ke Odoo WSGI application
-application = LimitedFileSizeMiddleware(application)
+# Jika aplikasi WSGI masih diperlukan
+application = server.application
